@@ -63,6 +63,7 @@ if __name__ == "__main__":
     # initialize the registation object, to be send to the Spring Boot Admin server
     myRegistration = Registration(
         name=configuration.servicename, 
+	serviceUrl="%s:%d" % (configuration.servicehost, configuration.serviceport),
         healthUrl="%s:%d%s" % (configuration.servicehost, configuration.serviceport, healthendpoint), 
         metadata=metadata
     )
