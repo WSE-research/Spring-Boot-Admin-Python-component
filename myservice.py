@@ -1,4 +1,4 @@
-from flask import Blueprint, Flask, render_template, jsonify, request
+from flask import Blueprint, jsonify, request
 
 myservice = Blueprint('myservice', __name__, template_folder='templates')
 

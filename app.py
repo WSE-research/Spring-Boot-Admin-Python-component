@@ -1,6 +1,6 @@
 import logging
 import argparse
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template
 from datetime import datetime
 
 from registration import Registration
@@ -39,7 +39,7 @@ def about():
     return render_template("about.html", configuration=configuration)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
     # allow configuration of the configfile via command line parameters
