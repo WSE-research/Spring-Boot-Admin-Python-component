@@ -32,7 +32,7 @@ class Configuration:
             if configvalues[key]:
                 try:
                     self.demandedConfigurationKeys.remove(key)
-                except:
+                except ValueError:
                     pass
             logging.debug("configuration: %s=%s" % (key, configvalues[key]))
 

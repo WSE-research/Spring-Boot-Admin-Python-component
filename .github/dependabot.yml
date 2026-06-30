@@ -1,0 +1,26 @@
+# Grouped, weekly dependency updates. Grouping minor+patch into one PR per
+# ecosystem fixes the previous pile-up of individual daily PRs; majors still
+# arrive separately (those need a human + the CI gate before merging).
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      python-minor-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
+
+  - package-ecosystem: docker
+    directory: "/"
+    schedule:
+      interval: weekly

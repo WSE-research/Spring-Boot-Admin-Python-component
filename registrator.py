@@ -3,7 +3,7 @@ import time
 import requests
 import json
 import logging
-from requests.auth import AuthBase, HTTPBasicAuth
+from requests.auth import HTTPBasicAuth
 
 
 class Registrator(threading.Thread):
